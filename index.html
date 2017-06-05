@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS with TS</title>
+
+    <!-- Style sheets -->
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body ng-app="angularWithTS">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">AngularJS wtih TypeScript</div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div ng-include="'app/helloWorld/helloWorldView.html'"></div>
+    </div>
+
+    <!-- Library Scripts -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-resource.js"></script>
+    <script src="scripts/angular-mocks.js"></script>
+    <script src="scripts/angular-route.js"></script>
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/helloWorld/helloWorldCtrl.js"></script>
+</body>
+</html>

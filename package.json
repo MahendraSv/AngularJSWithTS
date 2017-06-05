@@ -1,0 +1,17 @@
+{
+  "name": "angularjswithts",
+  "version": "1.0.0",
+  "description": "Angular JS With TypeScirpt",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["AngularJS", "TypeScript", "AngularJS With TypeScript"],
+  "author": "Mahendra Singamsetty",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "lite-server": "^2.3.0"
+  }
+}
