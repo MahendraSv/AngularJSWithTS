@@ -8,7 +8,7 @@ A simple and well structured boilerplate project based on AngularJS with TypeScr
 * Visual Studio Code ready
 
 ## Setup
-1. Install [Git](https://git-scm.com/downloads), [NodeJS](http://nodejs.org/) and [TypeScript] (https://www.typescriptlang.org).
+1. Install [Git](https://git-scm.com/downloads), [NodeJS](http://nodejs.org/) and [TypeScript](https://www.typescriptlang.org).
 2. Clone this project: `git clone https://github.com/MahendraSv/AngularJSWithTS.git`
 3. Move to cloned folder.
 4. Install packages `git install`
