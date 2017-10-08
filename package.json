@@ -7,7 +7,11 @@
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["AngularJS", "TypeScript", "AngularJS With TypeScript"],
+  "keywords": [
+    "AngularJS",
+    "TypeScript",
+    "AngularJS With TypeScript"
+  ],
   "author": "Mahendra Singamsetty",
   "license": "ISC",
   "devDependencies": {
