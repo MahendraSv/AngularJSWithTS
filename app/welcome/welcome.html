@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="/scripts/angular.js"></script>
+
+        <script src="/app/app.js"></script>
+        <script src="welcome.js"></script>
+    </head>
+    <body ng-app="angularWithTS">
+        <div ng-controller="WelcomeCtrl as x">
+            hello
+            <h2>
+                Message: {{x.msg}}, {{x.msg1}}
+            </h2>
+        </div>
+
+        <div>
+
+        </div>
+    </body>
+</html>

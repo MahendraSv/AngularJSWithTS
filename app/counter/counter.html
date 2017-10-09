@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="counter">
+    <head>
+        <script src="/scripts/angular.js"></script>
+        <script src="counter.js"></script>
+
+        <link rel="stylesheet" href="/styles/bootstrap.css">
+    </head>
+    
+    <body class="container" ng-controller="CounterCtrl as vm">
+        <h2>
+            {{vm.n}}
+            <hr>
+            <button ng-click="vm.change(1)">+1</button>
+            <button ng-click="vm.change(-1)" ng-hide="vm.isMin()">-1</button>
+            <hr/>
+            <button ng-click="vm.change(2)">+2</button>
+            <button ng-click="vm.change(-2)">-2</button>
+        </h2>
+    </body>
+</html>
