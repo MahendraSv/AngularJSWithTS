@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+    <head>
+        <link rel="stylesheet" href="/styles/bootstrap.css">
+        <script src="/scripts/angular.js"></script>
+        <script src="todo.js"></script>
+    </head>
+    <body class="container" ng-controller="TodoCtrl as vm">
+        <h2>Todo</h2>
+        {{vm.completedItems()}} out of {{vm.todos.length}} completd.
+        <ul>
+            <div ng-repeat="todo in vm.todos">
+                <input type="checkbox" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+                <button ng-click="vm.deleteTodo($index)">x</button>
+            </div>
+        </ul>
+        <input type="text" ng-model="vm.todoText">
+        <button ng-click="vm.addTodo()">Add</button>
+    </body>
+</html>
+
+<style>
+    .done-true {
+        text-decoration: line-through;
+        color: lightgray;
+    }
+</style>

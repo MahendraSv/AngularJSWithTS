@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="d1">
+
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+    <script src="/scripts/angular.js"></script>
+
+    <script src="product.js"></script>
+
+    <script src="d1.js"></script>
+    <script src="d2.js"></script>
+    <script src="d3.js"></script>
+    <script src="d4.js"></script>
+</head>
+
+<body class="container">
+    
+    <div my-directive title="singamsetty" color="blue"></div>
+    <my-directive title="Mahendra" color="red"></my-directive>
+    <my-directive title="Singamsetty" color="green"></my-directive>
+    <my-directive-one name="xxxx" age="14"></my-directive-one>
+    <div ng-controller="MyControllerOne as vm">
+        <!--<div ng-repeat="p in vm.products">
+            <my-directive-one name="{{p.productName}}" age="14"></my-directive-one>
+        </div>-->
+        <hr>
+            <my-directive-two product="p" ng-repeat="p in vm.myProducts"></my-directive-two>
+        <hr>
+        <my-directive-one name="{{p.productName}}" age="14" ng-repeat="p in vm.products | limitTo: 2"></my-directive-one>
+    </div>
+    <my-directive-four title="hello"></my-directive-four>
+</body>
+    
+</html>
