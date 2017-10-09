@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="counter">
     <head>
+<<<<<<< HEAD
         <script src="/scripts/angular.js"></script>
         <script src="counter.js"></script>
 
@@ -17,5 +18,20 @@
             <button ng-click="vm.change(2)">+2</button>
             <button ng-click="vm.change(-2)">-2</button>
         </h2>
+=======
+        <link rel="stylesheet" href="/styles/bootstrap.css">
+        <script src="/scripts/angular.js"></script>
+        <script src="counter.js"></script>
+    </head>
+    <body ng-controller="CounterCtrl as vm" class="container">
+        <h1>
+            {{vm.n}} <br/>
+            <button ng-click="vm.changeValue(1)"> +1 </button>
+            <button ng-click="vm.changeValue(-1)" ng-disabled="vm.isMin()"> -1 </button>
+            <hr>
+            <button ng-click="vm.changeValue(2)"> +2 </button>
+            <button ng-click="vm.changeValue(-2)"> -2 </button>
+        </h1>
+>>>>>>> c4627f875b34c543bfd1d0ea2369a6a0cd8d9f11
     </body>
 </html>

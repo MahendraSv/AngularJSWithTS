@@ -1,6 +1,6 @@
 var HelloWorldCtrl = (function () {
     function HelloWorldCtrl() {
-        this.message = "Hello World!!!";
+        this.message = "Hello World!";
     }
     return HelloWorldCtrl;
 }());

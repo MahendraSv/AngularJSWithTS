@@ -1,1 +1,1 @@
-angular.module('angularWithTS', []);
+var main = angular.module('angularWithTS', []);
