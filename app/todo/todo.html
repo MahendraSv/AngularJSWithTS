@@ -10,16 +10,22 @@
 
 <body class="container" ng-controller="TodoCtrl as vm">
     <h2>
-        Todo App
+        Todo App [ {{vm.doneItems()}} of {{vm.todoItems.length}} ]
         <hr/>
-        <!-- {{vm.todoItems}} -->
-        <ul>
+        <ol>
             <li ng-repeat="todoItem in vm.todoItems">
                 <input type="checkbox" ng-model="todoItem.status">
-                {{todoItem.msg}}
+                <span class="status-{{todoItem.status}}">{{todoItem.msg}}</span>
             </li>
-        </ul>
+        </ol>
+        <input type="text" ng-model="vm.newMsg">
+        <button ng-click="vm.addNewItem()" ng-disabled="vm.newMsg.length == 0">Add</button>
     </h2>
 </body>
-
+<style>
+    .status-true {
+        color: red;
+        text-decoration: line-through;
+    }
+</style>
 </html>

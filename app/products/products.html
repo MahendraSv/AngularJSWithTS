@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="products">
+
+<head>
+    <script src="/scripts/angular.js"></script>
+    <script src="products.js"></script>
+
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+</head>
+
+<body class="container" ng-controller="ProudctsCtrl as vm">
+    <br/>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Products Info
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>
+                            <button class="btn btn-info" ng-click="vm.toggleImages()">
+                                {{vm.showImages ? "Hide" : "Show"}} Images
+                            </button>
+                        </th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <div>
+                        Search: <input type="text" ng-model="searchText.productName">
+                    </div>
+                    <tr ng-repeat="p in vm.products | filter:searchText | orderBy:'-productName'">
+                        <td>{{$index + 1}}</td>
+                        <td>
+                            <img ng-src="{{p.imageUrl}}" width="50" ng-if="vm.showImages">
+                        </td>
+                        <td>{{p.productName | reverseString:'false'}}</td>
+                        <td>{{p.description}}</td>
+                        <td>{{p.price | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {{vm.cTime | date:'short' }}<br/>
+            {{vm.cTime | date:'longDate' }}<br/>
+            {{vm.cTime | date:'yyyy-MM-dd' }}
+        </div>
+    </div>
+</body>
+</html>
