@@ -27,20 +27,25 @@
                         <th>Product Name</th>
                         <th>Description</th>
                         <th>Price</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <div>
                         Search: <input type="text" ng-model="searchText.productName">
                     </div>
-                    <tr ng-repeat="p in vm.products | filter:searchText | orderBy:'-productName'">
-                        <td>{{$index + 1}}</td>
+                    <tr ng-class="{odd: $even}"
+                        ng-repeat="p in vm.products | filter:searchText | orderBy:'-productName'">
+                        <td ng-class-odd="odd">{{$index + 1}}</td>
                         <td>
                             <img ng-src="{{p.imageUrl}}" width="50" ng-if="vm.showImages">
                         </td>
                         <td>{{p.productName | reverseString:'false'}}</td>
                         <td>{{p.description}}</td>
                         <td>{{p.price | currency}}</td>
+                        <td>
+                            {{$middle}}
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -49,5 +54,14 @@
             {{vm.cTime | date:'yyyy-MM-dd' }}
         </div>
     </div>
+    <input type="text" ng-model="temp1" ng-list="he">
+    {{temp1}}
 </body>
+
+<style>
+    .odd {
+        background-color: lightgray;
+    }
+
+</style>
 </html>

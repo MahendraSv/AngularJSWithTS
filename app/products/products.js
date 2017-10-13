@@ -14,6 +14,7 @@ var App;
             function ProductsCtrl() {
                 this.showImages = false;
                 this.cTime = new Date();
+                this.msg = "<h1 onClick='alert(\'hello\')'>Example for ng-bind-html</h1>";
                 this.products = [{
                         "productId": 1,
                         "productName": "Leaf Rake",

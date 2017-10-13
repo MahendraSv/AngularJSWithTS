@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <script src="/scripts/angular.js"></script>
+    <!-- <script src="forms.js"></script> -->
+
+    <link rel="stylesheet" href="/styles/bootstrap.css">
+</head>
+
+<body class="container">
+    <br/>
+    <br/>
+    <form class="form-horizontal" name="form1" novalidate class="css-form">
+        <fieldset>
+            <legend>Basic Information</legend>
+            <div class="form-group" 
+            ng-class="{'has-success': form1.fullName.$valid, 
+                'has-error':form1.fullName.$invalid && form1.fullName.$dirty}">
+                <label for="fullName" class="col-sm-2 control-label"> Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="fullName" name="fullName" 
+                        required ng-model="x">
+                    <span class="help-block" 
+                ng-show="form1.fullName.$error.required && form1.fullName.$dirty">Fullname is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default"
+                        ng-disabled="form1.$invalid">Sign in</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    Valid - {{form1.fullName.$valid}}
+    <br> Invalid - {{form1.fullName.$invalid}}
+    <br> pristine - {{form1.fullName.$pristine}}
+    <br> dirty - {{form1.fullName.$dirty}}
+</body>
+
+<style type="text/css">
+    /* input.ng-dirty {
+        background-color: #FA787E;
+    }
+
+    input.ng-pristine {
+        background-color: #78FA89;
+    } 
+
+    input.ng-valid {
+        border: 3px solid darkred;
+    }
+
+    input.ng-invalid {
+        border: 3px solid black;
+    }
+    */
+</style>
+
+</html>
