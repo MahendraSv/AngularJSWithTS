@@ -1,5 +1,5 @@
 
-<div class="container" ng-controller="ProudctsCtrl as vm">
+<div class="container">
     <br/>
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -31,8 +31,10 @@
                         <td>
                             <img ng-src="{{p.imageUrl}}" width="50" ng-if="vm.showImages">
                         </td>
-                        <td>{{p.productName | reverseString:'false'}}</td>
-                        <td>{{p.description}}</td>
+                        <td>
+                            <a ng-href="#/productDetails/{{p.productId}}">{{p.productName}}</a>
+                        </td>
+                        <td>{{p.description | reverseString:'false'}}</td>
                         <td>{{p.price | currency}}</td>
                         <td>
                             {{$middle}}
