@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html ng-app="products">
 
-<head>
-    <script src="/scripts/angular.js"></script>
-    <script src="products.js"></script>
-
-    <link rel="stylesheet" href="/styles/bootstrap.css">
-</head>
-
-<body class="container" ng-controller="ProudctsCtrl as vm">
+<div class="container" ng-controller="ProudctsCtrl as vm">
     <br/>
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -56,12 +47,10 @@
     </div>
     <input type="text" ng-model="temp1" ng-list="he">
     {{temp1}}
-</body>
+</div>
 
 <style>
     .odd {
         background-color: lightgray;
     }
-
 </style>
-</html>

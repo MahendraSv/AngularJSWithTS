@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html ng-app="todo">
 
-<head>
-    <script src="/scripts/angular.js"></script>
-    <script src="todo.js"></script>
-
-    <link rel="stylesheet" href="/styles/bootstrap.css">
-</head>
-
-<body class="container" ng-controller="TodoCtrl as vm">
+<div class="container" ng-controller="TodoCtrl as vm">
     <h2>
         Todo App [ {{vm.doneItems()}} of {{vm.todoItems.length}} ]
         <hr/>
@@ -21,11 +12,10 @@
         <input type="text" ng-model="vm.newMsg">
         <button ng-click="vm.addNewItem()" ng-disabled="vm.newMsg.length == 0">Add</button>
     </h2>
-</body>
+</div>
 <style>
     .status-true {
         color: red;
         text-decoration: line-through;
     }
 </style>
-</html>

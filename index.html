@@ -13,13 +13,21 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <div class="navbar-brand">AngularJS wtih TypeScript</div>
+                <div class="navbar-brand">
+                    <a href="#/">AngularJS wtih TypeScript</a>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/products">Products</a></li>
+                    <li><a href="#/todo">Todo</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <!--<div ng-include="'app/helloWorld/helloWorldView.html'"></div>-->
+        <div ng-include="'app/helloWorld/helloWorldView.html'"></div>
         <ng-view></ng-view>
     </div>
 
@@ -34,5 +42,7 @@
 
     <!-- Controllers -->
     <script src="app/helloWorld/helloWorldCtrl.js"></script>
+    <script src="app/products/products.js"></script>
+    <script src="app/todo/todo.js"></script>
 </body>
 </html>
