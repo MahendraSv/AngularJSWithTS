@@ -17,7 +17,7 @@ module App {
             .then(
                 (response) => {
                     // this.p
-                    this.product = response.data;
+                    // this.product = response.data;
                     console.log("products = ", response);
                 }
             );

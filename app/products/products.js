@@ -12,7 +12,6 @@ var App;
         }());
         var ProductsCtrl = (function () {
             function ProductsCtrl(sampleService, $http) {
-                var _this = this;
                 this.sampleService = sampleService;
                 this.$http = $http;
                 this.showImages = false;
@@ -21,7 +20,7 @@ var App;
                 this.$http.get('https://59e072bc3b0a4d001272d0c1.mockapi.io/react/products')
                     .then(function (response) {
                     // this.p
-                    _this.products = response.data;
+                    // this.products = response.data;
                     console.log("products = ", response);
                 });
             }

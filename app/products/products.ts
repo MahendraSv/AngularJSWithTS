@@ -49,7 +49,7 @@ module App.Products {
             .then(
                 (response) => {
                     // this.p
-                    this.products = response.data;
+                    // this.products = response.data;
                     console.log("products = ", response);
                 }
             );
