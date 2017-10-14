@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html ng-app="sample">
     <head>
-        <link href="/styles/bootstrap.css">
+        <link rel="stylesheet" href="/styles/bootstrap.css">
         <script src="/scripts/angular.js"></script>
 
         <script src="/app/directives/d1.js"></script>
+        <script src="/app/directives/productInfo.js"></script>
     </head>
-    <body class="containter">
+    <body class="container">
         
         <directive-one text="My First Directive" color="red"></directive-one>
-        <directive-one text="My First Directive" color="green"></directive-one>
-        
-        <div directive-one text="directive as attribute" color="brown">
-            ABCD
+        <div ng-controller="ProductInfoCtrl as vm">
+            <product-info id="i" ng-repeat="i in vm.productIds"></product-info>
         </div>
     </body>
 </html>
