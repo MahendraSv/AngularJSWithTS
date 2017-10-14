@@ -32,7 +32,7 @@
                             <img ng-src="{{p.imageUrl}}" width="50" ng-if="vm.showImages">
                         </td>
                         <td>
-                            <a ng-href="#/productDetails/{{p.productId}}">{{p.productName}}</a>
+                            <a ng-href="#/productDetails/{{p.id}}">{{p.productName}}</a>
                         </td>
                         <td>{{p.description | reverseString:'false'}}</td>
                         <td>{{p.price | currency}}</td>

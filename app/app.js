@@ -15,7 +15,8 @@ function routeConfig($routeProvider) {
         template: "<h1>Welcome to My Angular Application</h1>"
     })
         .when('/productDetails/:productId', {
-        template: '<h1>Product</h1>'
+        templateUrl: "/app/products/productDetails.html",
+        controller: "ProductDetailsCtrl as vm"
     })
         .otherwise("/");
 }

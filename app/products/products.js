@@ -11,20 +11,26 @@ var App;
             return Product;
         }());
         var ProductsCtrl = (function () {
-            function ProductsCtrl(sampleService, productService) {
+            function ProductsCtrl(sampleService, $http) {
+                var _this = this;
                 this.sampleService = sampleService;
-                this.productService = productService;
+                this.$http = $http;
                 this.showImages = false;
                 this.msg = "<h1 onClick='alert(\'hello\')'>Example for ng-bind-html</h1>";
                 this.cTime = sampleService.getCurrentDate();
-                this.products = productService.getProducts();
+                this.$http.get('https://59e072bc3b0a4d001272d0c1.mockapi.io/react/products')
+                    .then(function (response) {
+                    // this.p
+                    _this.products = response.data;
+                    console.log("products = ", response);
+                });
             }
             ProductsCtrl.prototype.toggleImages = function () {
                 this.showImages = !this.showImages;
             };
             return ProductsCtrl;
         }());
-        ProductsCtrl.$inject = ['SampleService', 'ProductService'];
+        ProductsCtrl.$inject = ['SampleService', '$http'];
         function reverseString() {
             return function (value, options) {
                 console.log(options);

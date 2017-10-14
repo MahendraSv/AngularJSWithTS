@@ -1,6 +1,6 @@
 module App {
     export interface IProduct {
-        productId: number;
+        id: number;
         productName: string;
         productCode: string;
         releaseDate: string;
@@ -17,7 +17,7 @@ module App {
 
 module App.Products {
     class Product implements App.IProduct {
-        productId: number;
+        id: number;
         productName: string;
         productCode: string;
         releaseDate: string;
@@ -42,13 +42,20 @@ module App.Products {
 
         constructor(
             private sampleService: App.Services.SampleService,
-            private productService: App.Services.ProductService
+            private $http: ng.IHttpService
         ) {
             this.cTime = sampleService.getCurrentDate();
-            this.products = productService.getProducts();
+            this.$http.get('https://59e072bc3b0a4d001272d0c1.mockapi.io/react/products')
+            .then(
+                (response) => {
+                    // this.p
+                    this.products = response.data;
+                    console.log("products = ", response);
+                }
+            );
         }
     }
-    ProductsCtrl.$inject = ['SampleService', 'ProductService'];
+    ProductsCtrl.$inject = ['SampleService', '$http'];
 
     function reverseString() {
         return function (value: string, options: string) {
